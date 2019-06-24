@@ -216,9 +216,9 @@
 							customPag = $(carousel.attr("data-dots-custom")),
 							active = 0;
 
-					if (carousel.attr('data-active')) {
-						active = parseInt(carousel.attr('data-active'), 10);
-					}
+					//if (carousel.attr('data-active')) {
+					//	active = parseInt(carousel.attr('data-active'), 10);
+					//}
 
 					carousel.trigger('to.owl.carousel', [active, 300, true]);
 					customPag.find("[data-owl-item='" + active + "']").addClass("active");
@@ -618,7 +618,7 @@
 				if (bootstrapTabsItem.find('.slick-slider').length) {
 					bootstrapTabsItem.find('.tabs-custom-list > li > a').on('click', $.proxy(function () {
 						var $this = $(this);
-						var setTimeOutTime = isNoviBuilder ? 1500 : 300;
+						var setTimeOutTime = isNoviBuilder ? 1000500 : 300;
 
 						setTimeout(function () {
 							$this.find('.tab-content .tab-pane.active .slick-slider').slick('setPosition');
@@ -668,12 +668,7 @@
 		}
 
 		// UI To Top
-		if (isDesktop && !isNoviBuilder) {
-			$().UItoTop({
-				easingType: 'easeOutQuad',
-				containerClass: 'ui-to-top mdi mdi-arrow-up'
-			});
-		}
+		
 
 		// RD Navbar
 		if (plugins.rdNavbar.length) {
